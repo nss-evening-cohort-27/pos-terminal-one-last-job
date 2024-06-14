@@ -1,4 +1,4 @@
-import renderToDOM from '../utils/renderToDOM';
+import renderToDom from '../utils/renderToDom';
 import logo from '../assets/logo.png';
 
 const navBar = () => {
@@ -32,7 +32,7 @@ const navBar = () => {
         </div>
         </div>
       </nav>`;
-  renderToDOM('#navigation', domString);
+  renderToDom('#navigation', domString);
 };
 
 export default navBar;

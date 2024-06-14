@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import client from './client';
-import welcomePage from '../pages/loginPage';
+import loginPage from '../pages/loginPage';
 import startApp from './startApp';
 
 const ViewDirectorBasedOnUserAuthStatus = () => {
@@ -12,7 +12,7 @@ const ViewDirectorBasedOnUserAuthStatus = () => {
       startApp();
     } else {
       // person is NOT logged in
-      welcomePage();
+      loginPage();
     }
   });
 };

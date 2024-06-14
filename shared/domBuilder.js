@@ -1,4 +1,4 @@
-import renderToDOM from '../utils/renderToDOM';
+import renderToDom from '../utils/renderToDom';
 
 const domBuilder = () => {
   const domString = `
@@ -10,7 +10,7 @@ const domBuilder = () => {
     <div id="view"></div>
   </div>`;
 
-  renderToDOM('#app', domString);
+  renderToDom('#app', domString);
 };
 
 export default domBuilder;
