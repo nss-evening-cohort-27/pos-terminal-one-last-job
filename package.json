@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "One Last Job: Cody, Dustin, Jimmy, & Julien",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",
