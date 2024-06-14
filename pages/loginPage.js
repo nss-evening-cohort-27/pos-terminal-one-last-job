@@ -1,8 +1,8 @@
 import loginButton from '../components/loginButton';
-import renderToDOM from '../utils/renderToDom';
+import renderToDom from '../utils/renderToDom';
 import logo from '../assets/logo.png';
 
-const welcomePage = () => {
+const loginPage = () => {
   document.querySelector('#app').innerHTML = '';
   const domString = `
     <div id=login-container>
@@ -13,8 +13,8 @@ const welcomePage = () => {
     </div>
 
     `;
-  renderToDOM('#app', domString);
+  renderToDom('#app', domString);
   loginButton();
 };
 
-export default welcomePage;
+export default loginPage;

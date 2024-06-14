@@ -26,3 +26,45 @@ body {
   width: 200px; 
  
 }
+
+#landing-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#landing-page-welcome-message {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+  padding-bottom: 300px;
+  padding-top: 120px;
+}
+
+#landing-page-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.landing-page-btn {
+  width: 300px;
+  height: 50px;
+  border-radius: 6px;
+  color: white;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+}
+
+#landing-page-view-orders-btn {
+  background-color: rgb(58, 166, 58);
+}
+
+#landing-page-create-an-order-btn {
+  background-color: rgb(51, 171, 208);
+}
+
+#landing-page-view-revenue-btn {
+  background-color: rgb(255, 208, 0);
+}
