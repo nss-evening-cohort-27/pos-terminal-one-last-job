@@ -16,7 +16,7 @@ const addOrderForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="title">Email</label>
-        <input type="email" class="form-control" id="email" aria-describedby="Email" placeholder="Enter Email" value="${obj.email || ''}" required>
+        <input type="email" class="form-control" id="email" aria-describedby="Email" placeholder="Enter Email" value="${obj.email_address || ''}" required>
       </div>
        <div class="form-group">
           <label for="order_type">Order Type</label>

@@ -8,8 +8,9 @@ const formEvents = () => {
       const payload = {
         order_name: document.querySelector('#order_name').value,
         phone_number: document.querySelector('#phone_number').value,
-        email: document.querySelector('#email').value,
+        email_address: document.querySelector('#email').value,
         order_type: document.querySelector('#order_type').value,
+        closed: false,
       };
       createOrder(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
