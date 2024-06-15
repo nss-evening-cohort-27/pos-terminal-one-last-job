@@ -12,7 +12,7 @@ const addItemForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="price">Item Price</label>
-        <input type="email" class="form-control" id="item_price" aria-describedby="item_price" placeholder="Whats the Price?" value="${obj.item_price || ''}" required>
+        <input type="email" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" value="${obj.price || ''}" required>
       </div>
       <button type="submit" class="btn btn-primary">Add/Edit item
       </button>
