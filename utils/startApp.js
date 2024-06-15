@@ -3,11 +3,12 @@ import navBar from '../shared/navBar';
 import logoutButton from '../components/logoutButton';
 import landingPage from '../pages/landingPage';
 import domEvents from '../events/domEvents';
+import formEvents from '../events/formEvents';
 
 const startApp = () => {
   domBuilder();
   domEvents();
-  // formEvents(user);
+  formEvents();
   landingPage();
   navBar();
   // navigationEvents(user);
