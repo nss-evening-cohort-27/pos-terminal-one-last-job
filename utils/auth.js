@@ -10,4 +10,14 @@ const signOut = () => {
   firebase.auth().signOut();
 };
 
-export { signIn, signOut };
+const getLoggedInUserName = () => {
+  const user = firebase.auth().currentUser;
+
+  if (user) {
+    return user.displayName || 'Guest';
+  }
+
+  return 'Guest';
+};
+
+export { signIn, signOut, getLoggedInUserName };
