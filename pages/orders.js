@@ -19,7 +19,7 @@ const showOrderCards = (array) => {
           <p class="card-text card-order-status">Order Status: Open</p>
           <p class="card-text card-phone-number">Customer Phone Number: ${order.phone_number}</p>
           <p class="card-text card-email-address">Customer Email Address: ${order.email_address}</p>
-          <Order class="card-text card-order-type">Order Type: ${order.order_type}</p>
+          <p class="card-text card-order-type">Order Type: ${order.order_type}</p>
           <i class="btn btn-success fas fa-eye" id="view-order-btn--${order.firebaseKey}">Details</i>
           <i class="btn btn-info fas fa-edit" id="edit-order-btn--${order.firebaseKey}">Edit</i>
           <i class="btn btn-danger fas fa-trash-alt" id="delete-order-btn--${order.firebaseKey}">Delete</i>
@@ -34,7 +34,7 @@ const showOrderCards = (array) => {
           <p class="card-text card-order-status">Order Status: Closed</p>
           <p class="card-text card-phone-number">Customer Phone Number: ${order.phone_number}</p>
           <p class="card-text card-email-address">Customer Email Address: ${order.email_address}</p>
-          <Order class="card-text card-order-type">Order Type: ${order.order_type}</p>
+          <p class="card-text card-order-type">Order Type: ${order.order_type}</p>
           <i class="btn btn-success fas fa-eye" id="view-order-btn--${order.firebaseKey}">Details</i>
           <i class="btn btn-info fas fa-edit" id="edit-order-btn--${order.firebaseKey}">Edit</i>
         </div>
