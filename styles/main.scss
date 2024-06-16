@@ -68,3 +68,18 @@ body {
 #landing-page-view-revenue-btn {
   background-color: rgb(255, 208, 0);
 }
+
+#order-card {
+  width: 300px;
+  margin: 5px;
+  border-radius: 0;
+}
+
+#orderCards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 1000px;
+  margin: auto;
+}
