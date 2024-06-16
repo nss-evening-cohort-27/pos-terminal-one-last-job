@@ -4,6 +4,7 @@ import { showOrderCards } from '../pages/orders';
 const formEvents = () => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
+    // CLICK EVENT FOR SUBMITTING AN ORDER
     if (e.target.id.includes('submit')) {
       const payload = {
         order_name: document.querySelector('#order_name').value,
@@ -20,7 +21,7 @@ const formEvents = () => {
         });
       });
     }
-    //  CLICK EVENT FOR EDITING A order
+    //  CLICK EVENT FOR EDITING AN ORDER
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
@@ -32,7 +33,8 @@ const formEvents = () => {
       };
 
       updateOrder(payload).then(() => {
-        getOrder().then((order) => showOrderCards(order));
+        // getOrder().then((order) => showOrderCards(order));
+        getOrder().then(showOrderCards);
       });
     }
   });
