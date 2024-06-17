@@ -14,8 +14,8 @@ const getOrder = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteOrder = (firebasekey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders/${firebasekey}.json`, {
+const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/orders/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json,'
@@ -46,7 +46,7 @@ const createOrder = (paylod) => new Promise((resolve, reject) => {
 });
 
 const updateOrder = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/orders/${payload.firebasekey}.json`, {
+  fetch(`${endpoint}/orders/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
