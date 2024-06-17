@@ -1,7 +1,7 @@
 import clearDom from '../../utils/clearDom';
 import renderToDom from '../../utils/renderToDom';
 
-// create order form
+// CREATE/UPDATE ORDER FORM
 const addOrderForm = (obj = {}) => {
   clearDom();
   const domString = `
