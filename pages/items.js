@@ -27,8 +27,8 @@ const showItemCards = (array, firebaseKey) => {
       <div class="card-body">
         <h3 class="card-title card-item-name">${item.item_name}</h3>
         <p class="card-text card-item-price">PRICE: $${item.price}</p>
-        <i class="btn btn-info fas fa-edit" id="edit-item-btn--${item.firebaseKey}">Edit item</i>
-          <i class="btn btn-danger fas fa-trash-alt" id="delete-item-btn--${item.firebaseKey}">Delete item</i>
+        <i class="btn" style="color: rgb(0, 110, 236)" id="edit-item-btn--${item.firebaseKey}">Edit item</i>
+          <i class="btn" style="color: red" id="delete-item-btn--${item.firebaseKey}">Delete item</i>
       </div>
     </div>
     `;
