@@ -14,7 +14,7 @@ const addItemForm = (firebaseKey) => {
         <label for="price">Item Price</label>
         <input type="number" min="0" step="0.01" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" required>
       </div>
-      <button type="submit" class="btn btn-primary">Add item</button>
+      <button type="submit" class="btn btn-success add-update-item-btn">Add item</button>
     </form>`;
 
   renderToDom('#form-container', domString);
