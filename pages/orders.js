@@ -30,7 +30,7 @@ const showOrderCards = (array) => {
       `;
     } else {
       domString += `
-      <div class="card">
+      <div class="card order-card">
         <div class="card-body">
           <h3 class="card-title card-order-name">${order.order_name}</h3>
           <p class="card-text card-order-status">Order Status: Closed</p>
