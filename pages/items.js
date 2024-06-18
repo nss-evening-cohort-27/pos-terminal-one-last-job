@@ -28,8 +28,7 @@ const showItemCards = (array, firebaseKey) => {
   let domString = `
   <div id="item-page-container">
   <p class="total-price">TOTAL: $${truePrice}</p>
-  </div>
-    <div id="item-card-container"></div>
+    <div id="item-card-container">
   `;
 
   array.forEach((item) => {
