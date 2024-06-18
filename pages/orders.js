@@ -15,7 +15,7 @@ const showOrderCards = (array) => {
   array.forEach((order) => {
     if (order.closed === false) {
       domString += `
-      <div class="card" id="order-card">
+      <div class="card order-card">
         <div class="card-body">
           <h3 class="card-title card-order-name">${order.order_name}</h3>
           <p class="card-text card-order-status">Order Status: Open</p>
