@@ -26,7 +26,7 @@ const addOrderForm = (obj = {}) => {
           </select>
         </div>
       
-      <button type="submit" class="btn btn-primary">Submit Order
+      <button type="submit" class="btn btn-success form-btn">Create/Edit Order
       </button>
     </form>`;
 
