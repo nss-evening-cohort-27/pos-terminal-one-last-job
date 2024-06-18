@@ -3,10 +3,12 @@ import renderToDom from '../utils/renderToDom';
 
 const emptyItemCards = (firebaseKey) => {
   const domString = `
-  <h3 id="no-items-header">No Items</h3>
-  <div id="item-page-button-container">
-      <button class="btn" id="add-item-btn--${firebaseKey}">Add Item</button>
-      <button class="btn" id="go-to-payment-btn">Go To Payment</button>
+  <div id="item-page-container">
+    <h3 id="no-items-header">No Items</h3>
+    <div id="item-page-button-container">
+        <button class="btn" id="add-item-btn--${firebaseKey}">Add Item</button>
+        <button class="btn" id="go-to-payment-btn">Go To Payment</button>
+      </div>
     </div>
   `;
   renderToDom('#orderCards', domString);
@@ -15,10 +17,13 @@ const emptyItemCards = (firebaseKey) => {
 const showItemCards = (array, firebaseKey) => {
   clearDom();
 
-  let domString = '';
+  let domString = `
+  <div id="item-page-container">
+    <div id="item-card-container">
+  `;
   array.forEach((item) => {
     domString += `
-    <div class="card">
+    <div class="card item-card">
       <div class="card-body">
         <h3 class="card-title card-item-name">${item.item_name}</h3>
         <p class="card-text card-item-price">PRICE: $${item.price}</p>
@@ -30,9 +35,11 @@ const showItemCards = (array, firebaseKey) => {
   });
 
   domString += `
-    <div id="item-page-button-container">
-      <button class="add-item-btn" id="add-item-btn--${firebaseKey}">Add Item</button>
-      <button class="btn" id="go-to-payment-btn">Go To Payment</button>
+      </div>
+      <div id="item-page-button-container">
+        <button class="add-item-btn" id="add-item-btn--${firebaseKey}">Add Item</button>
+        <button class="btn" id="go-to-payment-btn">Go To Payment</button>
+      </div>
     </div>
   `;
 
