@@ -16,10 +16,22 @@ const emptyItemCards = (firebaseKey) => {
 const showItemCards = (array, firebaseKey) => {
   clearDom();
 
+  let totalPrice = 0;
+
+  array.forEach((item) => {
+    const price = Number(item.price);
+    totalPrice += price;
+  });
+
+  const truePrice = totalPrice.toFixed(2);
+
   let domString = `
   <div id="item-page-container">
-    <div id="item-card-container">
+  <p class="total-price">TOTAL: $${truePrice}</p>
+  </div>
+    <div id="item-card-container"></div>
   `;
+
   array.forEach((item) => {
     domString += `
     <div class="card item-card">

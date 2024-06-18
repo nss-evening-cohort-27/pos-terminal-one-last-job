@@ -15,7 +15,6 @@ body {
   align-items: center;
   justify-content: center; 
   height: 70vh; 
-  
 }
 
 #logo {
@@ -73,15 +72,11 @@ body {
   background-color: rgb(255, 208, 0);
 }
 
-
 .order-card, .item-card {
   width: 300px;
   margin: 5px;
   border-radius: 6;
 }
-
-
-
 
 #orderCards, #item-card-container {
   display: flex;
@@ -114,4 +109,10 @@ body {
 
 .form-btn {
   margin-top: 10px;
+}
+
+.total-price {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
