@@ -58,6 +58,20 @@ const formEvents = () => {
       });
     }
 
+    // CLICK EVENT FOR CLOSING AN ORDER
+    if (e.target.id.includes('update-payment')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        payment_type: document.querySelector('#payment-type').value,
+        tip_amount: document.querySelector('#tip-amount').value,
+        closed: true,
+        firebaseKey,
+      };
+      updateOrder(payload).then(() => {
+        getOrder().then(showOrderCards);
+      });
+    }
+
     // CLICK EVENT FOR EDITING / UPDATING AN ITEM
     if (e.target.id.includes('update-item')) {
       const [, firebaseKey] = e.target.id.split('--');
