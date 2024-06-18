@@ -12,7 +12,7 @@ const emptyItemCards = (firebaseKey) => {
   renderToDom('#orderCards', domString);
 };
 
-const showItemCards = (array) => {
+const showItemCards = (array, firebaseKey) => {
   clearDom();
 
   let domString = '';
@@ -31,7 +31,7 @@ const showItemCards = (array) => {
 
   domString += `
     <div id="item-page-button-container">
-      <button class="btn" id="add-item-btn">Add Item</button>
+      <button class="add-item-btn" id="add-item-btn--${firebaseKey}">Add Item</button>
       <button class="btn" id="go-to-payment-btn">Go To Payment</button>
     </div>
   `;

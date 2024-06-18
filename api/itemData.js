@@ -2,6 +2,7 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
+// CREATE A NEW ITEM
 const createItem = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/items.json`, {
     method: 'POST',
@@ -11,10 +12,11 @@ const createItem = (payload) => new Promise((resolve, reject) => {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then((data) => resolve.apply(data))
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
+// GET A SINGLE ITEM
 const getSingleItem = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/items/${firebaseKey}.json`, {
     method: 'GET',
@@ -27,6 +29,7 @@ const getSingleItem = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// UPDATE AN ITEM
 const updateItem = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/items/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -40,7 +43,8 @@ const updateItem = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const filterItemByOrderId = (firebaseKey) => new Promise((resolve, reject) => {
+// GET ITEMS WITH A SPECIFIC ORDER ID
+const filterItemsByOrderId = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/items.json?orderBy="order_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
@@ -52,9 +56,23 @@ const filterItemByOrderId = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// DELETE AN ITEM
+const deleteItem = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/items/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getSingleItem,
   createItem,
   updateItem,
-  filterItemByOrderId
+  filterItemsByOrderId,
+  deleteItem
 };

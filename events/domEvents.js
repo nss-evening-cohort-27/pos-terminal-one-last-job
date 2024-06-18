@@ -1,6 +1,7 @@
-import { filterItemByOrderId } from '../api/itemData';
+import { deleteItem, filterItemsByOrderId, getSingleItem } from '../api/itemData';
 // import getItemsByOrder from '../api/mergedData';
 import { deleteOrder, getOrder, getSingleOrder } from '../api/orderData';
+import { addItemForm, updateItemForm } from '../components/forms/addItemForm';
 import addOrderForm from '../components/forms/addOrderForm';
 import paymentForm from '../components/forms/paymentForm';
 import { emptyItemCards, showItemCards } from '../pages/items';
@@ -25,16 +26,13 @@ const domEvents = () => {
     // CLICK EVENT FOR DETAILS BUTTON TO VIEW ORDER DETAILS
     if (e.target.id.includes('view-order-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      // getItemsByOrder(firebaseKey).then(showItemCards);
-      // filterItemByOrderId(firebaseKey).then(showItemCards);
-      filterItemByOrderId(firebaseKey).then((item) => {
-        if (item.order_id === null || item.order_id === undefined) {
+      filterItemsByOrderId(firebaseKey).then((item) => {
+        if (item.length < 1) {
           emptyItemCards(firebaseKey);
         } else {
-          showItemCards(item);
+          showItemCards(item, firebaseKey);
         }
       });
-      console.warn(firebaseKey);
     }
 
     // CLICK EVENT FOR EDIT BUTTON TO EDIT ORDER
@@ -59,6 +57,37 @@ const domEvents = () => {
           getOrder().then(showOrderCards);
         });
       }
+    }
+
+    // CLICK EVENT FOR EDIT ITEM BUTTON TO SHOW ITEM FORM
+    if (e.target.id.includes('edit-item-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleItem(firebaseKey).then((item) => {
+        updateItemForm(item);
+      });
+    }
+
+    // CLICK EVENT FOR ADD ITEM BUTTON TO SHOW ITEM FORM
+    if (e.target.id.includes('add-item-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      addItemForm(firebaseKey);
+    }
+
+    // CLICK EVENT FOR DELETE ITEM BUTTON TO DELETE ITEM
+    if (e.target.id.includes('delete-item-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleItem(firebaseKey).then((item) => {
+        deleteItem(firebaseKey).then(() => {
+          filterItemsByOrderId(item.order_id).then((items) => {
+            if (items.length < 1) {
+              emptyItemCards(firebaseKey);
+            } else {
+              showItemCards(items, firebaseKey);
+            }
+          });
+        });
+      });
     }
   });
 };
