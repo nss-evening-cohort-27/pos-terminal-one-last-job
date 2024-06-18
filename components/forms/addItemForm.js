@@ -12,7 +12,7 @@ const addItemForm = (firebaseKey) => {
       </div>
       <div class="form-group">
         <label for="price">Item Price</label>
-        <input type="number" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" required>
+        <input type="number" min="0" step="0.01" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" required>
       </div>
       <button type="submit" class="btn btn-primary">Add item</button>
     </form>`;
@@ -31,7 +31,7 @@ const updateItemForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="price">Item Price</label>
-        <input type="number" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" value="${obj.price}" required>
+        <input type="number" min="0" step="0.01" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" value="${obj.price}" required>
       </div>
       <button type="submit" class="btn btn-primary">Edit item
       </button>
