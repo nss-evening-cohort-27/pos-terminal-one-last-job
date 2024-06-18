@@ -6,7 +6,7 @@ const emptyItemCards = (firebaseKey) => {
   <h3 id="no-items-header">No Items</h3>
   <div id="item-page-button-container">
       <button class="btn" id="add-item-btn--${firebaseKey}">Add Item</button>
-      <button class="btn" id="go-to-payment-btn">Go To Payment</button>
+      <button class="btn" id="go-to-payment-btn--${firebaseKey}">Go To Payment</button>
     </div>
   `;
   renderToDom('#orderCards', domString);
