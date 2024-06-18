@@ -2,6 +2,7 @@ import { filterItemByOrderId } from '../api/itemData';
 // import getItemsByOrder from '../api/mergedData';
 import { deleteOrder, getOrder, getSingleOrder } from '../api/orderData';
 import addOrderForm from '../components/forms/addOrderForm';
+import paymentForm from '../components/forms/paymentForm';
 import { emptyItemCards, showItemCards } from '../pages/items';
 import { showOrderCards } from '../pages/orders';
 
@@ -28,7 +29,7 @@ const domEvents = () => {
       // filterItemByOrderId(firebaseKey).then(showItemCards);
       filterItemByOrderId(firebaseKey).then((item) => {
         if (item.order_id === null || item.order_id === undefined) {
-          emptyItemCards();
+          emptyItemCards(firebaseKey);
         } else {
           showItemCards(item);
         }
@@ -41,6 +42,11 @@ const domEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => addOrderForm(orderObj));
       getSingleOrder(firebaseKey).then(addOrderForm);
+    }
+    if (e.target.id.includes('go-to-payment-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then((orderObj) => paymentForm(orderObj));
+      getSingleOrder(firebaseKey).then(paymentForm);
     }
 
     // CLICK EVENT FOR DELETE BUTTON TO DELETE ORDER
