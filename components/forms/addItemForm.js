@@ -33,7 +33,7 @@ const updateItemForm = (obj = {}) => {
         <label for="price">Item Price</label>
         <input type="number" min="0" step="0.01" class="form-control" id="price" aria-describedby="item_price" placeholder="Whats the Price?" value="${obj.price}" required>
       </div>
-      <button type="submit" class="btn btn-primary">Edit item
+      <button type="submit" class="btn btn-success form-btn">Edit item
       </button>
     </form>`;
 

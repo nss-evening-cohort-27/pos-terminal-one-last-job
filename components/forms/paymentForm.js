@@ -18,9 +18,9 @@ const paymentForm = (obj = {}) => {
       </div>      
       <div class="form-group">
       <label for="tip-amount">Tip Amount</label>
-      <input type="number" min="0" step="0.01 class="form-control" id="tip-amount" placeholder="Enter Tip Amount Here." value="${obj.tip_amount || ''}" required>
+      <input type="number" min="0" step="0.01" class="form-control" id="tip-amount" placeholder="Enter Tip Amount Here." value="${obj.tip_amount || ''}" required>
     </div>
-      <button type="submit" id="close-order-btn" class="btn btn-primary">Close Order</button>
+      <button type="submit" id="close-order-btn" class="btn btn-primary form-btn">Close Order</button>
     </form>`;
 
   renderToDom('#form-container', domString);
