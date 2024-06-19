@@ -89,7 +89,7 @@ const domEvents = () => {
             if (items.length < 1) {
               emptyItemCards(firebaseKey);
             } else {
-              showItemCards(items, firebaseKey);
+              showItemCards(items, item.order_id);
             }
           });
         });
