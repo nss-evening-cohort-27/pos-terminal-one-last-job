@@ -87,7 +87,7 @@ const domEvents = () => {
         deleteItem(firebaseKey).then(() => {
           filterItemsByOrderId(item.order_id).then((items) => {
             if (items.length < 1) {
-              emptyItemCards(firebaseKey);
+              emptyItemCards(item.order_id);
             } else {
               showItemCards(items, item.order_id);
             }
