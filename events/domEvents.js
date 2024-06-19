@@ -5,7 +5,7 @@ import { addItemForm, updateItemForm } from '../components/forms/addItemForm';
 import addOrderForm from '../components/forms/addOrderForm';
 import paymentForm from '../components/forms/paymentForm';
 import { emptyItemCards, showItemCards } from '../pages/items';
-import { showOrderCards } from '../pages/orders';
+import { emptyOrderCards, showOrderCards } from '../pages/orders';
 
 const domEvents = () => {
   // LANDING PAGE EVENTS
@@ -17,7 +17,13 @@ const domEvents = () => {
 
     // CLICK EVENT FOR VIEW ORDERS BUTTON ON LANDING PAGE
     if (e.target.id.includes('landing-page-view-orders-btn')) {
-      getOrder().then(showOrderCards);
+      getOrder().then((orders) => {
+        if (orders.length < 1) {
+          emptyOrderCards();
+        } else {
+          showOrderCards(orders);
+        }
+      });
     }
   });
 
