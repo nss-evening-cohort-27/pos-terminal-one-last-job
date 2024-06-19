@@ -48,17 +48,19 @@ const showItemCards = (array, firebaseKey) => {
     console.warn(order);
     if (order.closed === false) {
       domString += `
-      
-      <div id="item-page-button-container">
-        <button class="add-item-btn" id="add-item-btn--${firebaseKey}">Add Item</button>
-        <button class="go-to-payment-btn" id="go-to-payment-btn--${firebaseKey}">Go To Payment</button>
+        </div>
+        <div id="item-page-button-container">
+          <button class="add-item-btn" id="add-item-btn--${firebaseKey}">Add Item</button>
+          <button class="go-to-payment-btn" id="go-to-payment-btn--${firebaseKey}">Go To Payment</button>
+        </div>
       </div>
   `;
     } else {
       domString += `
-      
-      <div id="item-page-button-container">
-      <h3> Order Closed</h3>
+        </div>
+        <div id="item-page-button-container">
+          <h3> Order Closed</h3>
+        </div>
       </div>
   `;
     }
