@@ -52,8 +52,8 @@ const formEvents = () => {
       createItem(payload).then(({ name }) => {
         const patchPayload = { order_id: firebaseKey, firebaseKey: name };
 
-        updateItem(patchPayload).then(() => {
-          filterItemsByOrderId(firebaseKey).then(showItemCards);
+        updateItem(patchPayload).then((items) => {
+          filterItemsByOrderId(firebaseKey).then(showItemCards(items, firebaseKey));
         });
       });
     }
