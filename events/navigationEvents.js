@@ -22,19 +22,15 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#search').addEventListener('keyup', (e) => {
-    const searchValue = document.querySelector('#search').value.toLowerCase();
+    const searchValue = e.target.value.toLowerCase();
 
-    if (e.keyCode === 13) {
-      searchOrders(searchValue).then((filteredOrders) => {
-        if (filteredOrders.length === 0) {
-          emptyOrderCards();
-        } else {
-          showOrderCards(filteredOrders);
-        }
-      });
-
-      document.querySelector('#search').value = '';
-    }
+    searchOrders(searchValue).then((filteredOrders) => {
+      if (filteredOrders.length === 0) {
+        emptyOrderCards();
+      } else {
+        showOrderCards(filteredOrders);
+      }
+    });
   });
 };
 
