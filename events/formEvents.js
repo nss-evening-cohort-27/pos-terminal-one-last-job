@@ -53,7 +53,9 @@ const formEvents = () => {
         const patchPayload = { order_id: firebaseKey, firebaseKey: name };
 
         updateItem(patchPayload).then(() => {
-          filterItemsByOrderId(firebaseKey).then(showItemCards);
+          filterItemsByOrderId(firebaseKey).then((items) => {
+            showItemCards(items, patchPayload.order_id);
+          });
         });
       });
     }
@@ -84,7 +86,9 @@ const formEvents = () => {
           firebaseKey: item.firebaseKey
         };
         updateItem(payload).then(() => {
-          filterItemsByOrderId(payload.order_id).then(showItemCards);
+          filterItemsByOrderId(payload.order_id).then((items) => {
+            showItemCards(items, payload.order_id);
+          });
         });
       });
     }
