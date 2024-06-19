@@ -70,6 +70,14 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const searchOrders = (searchValue) => new Promise((resolve, reject) => {
+  getOrder().then((orders) => {
+    const filteredOrders = orders.filter((order) => order.order_name.toLowerCase().includes(searchValue.toLowerCase()));
+    resolve(filteredOrders);
+  })
+    .catch(reject);
+});
+
 export {
-  getOrder, deleteOrder, createOrder, updateOrder, getSingleOrder
+  getOrder, deleteOrder, createOrder, updateOrder, getSingleOrder, searchOrders
 };

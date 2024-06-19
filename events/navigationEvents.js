@@ -1,7 +1,7 @@
 import addOrderForm from '../components/forms/addOrderForm';
 import landingPage from '../pages/landingPage';
-import { getOrder } from '../api/orderData';
-import { showOrderCards } from '../pages/orders';
+import { getOrder, searchOrders } from '../api/orderData';
+import { emptyOrderCards, showOrderCards } from '../pages/orders';
 
 const navigationEvents = () => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
@@ -18,6 +18,22 @@ const navigationEvents = () => {
     // Click event for Create an Order button to show create order form
     if (e.target.id.includes('createAnOrder')) {
       addOrderForm();
+    }
+  });
+
+  document.querySelector('#search').addEventListener('keyup', (e) => {
+    const searchValue = document.querySelector('#search').value.toLowerCase();
+
+    if (e.keyCode === 13) {
+      searchOrders(searchValue).then((filteredOrders) => {
+        if (filteredOrders.length === 0) {
+          emptyOrderCards();
+        } else {
+          showOrderCards(filteredOrders);
+        }
+      });
+
+      document.querySelector('#search').value = '';
     }
   });
 };

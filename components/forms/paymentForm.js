@@ -4,7 +4,7 @@ import renderToDom from '../../utils/renderToDom';
 const paymentForm = (obj = {}) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `update-payment--${obj.firebaseKey}` : 'submit-payment'}" class="mb-4">
+  <form id="${obj.firebaseKey ? `update-payment--${obj.firebaseKey}` : `submit-payment--${obj.firebaseKey}`}" class="mb-4">
       <div class="form-group">
         <label for="payment-type">Payment Type</label>
         <select class="form-control" id="payment-type" name="payment-type" required>
