@@ -70,6 +70,18 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getClosedOrders = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/orders.json?orderBy="closed"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 const searchOrders = (searchValue) => new Promise((resolve, reject) => {
   getOrder().then((orders) => {
     const filteredOrders = orders.filter((order) => order.order_name.toLowerCase().includes(searchValue.toLowerCase()));
@@ -79,5 +91,5 @@ const searchOrders = (searchValue) => new Promise((resolve, reject) => {
 });
 
 export {
-  getOrder, deleteOrder, createOrder, updateOrder, getSingleOrder, searchOrders
+  getOrder, deleteOrder, createOrder, updateOrder, getSingleOrder, searchOrders, getClosedOrders
 };

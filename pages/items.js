@@ -69,7 +69,8 @@ const showItemCards = (array, firebaseKey) => {
 
       domString += `
         </div>
-        <div id="item-page-button-container">
+        <div id="item-page-order-closed-container">
+          <p id="item-page-closed-order-tip-amount">Tip Amount: $${Number(order.tip_amount).toFixed(2)}</p>
           <h3> Order Closed</h3>
         </div>
       </div>

@@ -6,6 +6,7 @@ import addOrderForm from '../components/forms/addOrderForm';
 import paymentForm from '../components/forms/paymentForm';
 import { emptyItemCards, showItemCards } from '../pages/items';
 import { emptyOrderCards, showOrderCards } from '../pages/orders';
+import revenuePage from '../pages/revenuePage';
 
 const domEvents = () => {
   // LANDING PAGE EVENTS
@@ -24,6 +25,11 @@ const domEvents = () => {
           showOrderCards(orders);
         }
       });
+    }
+
+    // CLICK EVENT FOR VIEW REVENUE BUTTON ON LANDING PAGE
+    if (e.target.id.includes('landing-page-view-revenue-btn')) {
+      revenuePage();
     }
   });
 

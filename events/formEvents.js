@@ -63,14 +63,21 @@ const formEvents = () => {
     // CLICK EVENT FOR CLOSING AN ORDER
     if (e.target.id.includes('update-payment')) {
       const [, firebaseKey] = e.target.id.split('--');
-      const payload = {
-        payment_type: document.querySelector('#payment-type').value,
-        tip_amount: document.querySelector('#tip-amount').value,
-        closed: true,
-        firebaseKey,
-      };
-      updateOrder(payload).then(() => {
-        getOrder().then(showOrderCards);
+      filterItemsByOrderId(firebaseKey).then((items) => {
+        let itemSum = 0;
+        items.forEach((item) => {
+          itemSum += Number(item.price);
+        });
+        const payload = {
+          payment_type: document.querySelector('#payment-type').value,
+          tip_amount: document.querySelector('#tip-amount').value,
+          closed: true,
+          order_total: itemSum,
+          firebaseKey,
+        };
+        updateOrder(payload).then(() => {
+          getOrder().then(showOrderCards);
+        });
       });
     }
 
