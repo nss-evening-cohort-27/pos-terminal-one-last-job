@@ -2,6 +2,7 @@ import addOrderForm from '../components/forms/addOrderForm';
 import landingPage from '../pages/landingPage';
 import { getOrder, searchOrders } from '../api/orderData';
 import { emptyOrderCards, showOrderCards } from '../pages/orders';
+import revenuePage from '../pages/revenuePage';
 
 const navigationEvents = () => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
@@ -18,6 +19,10 @@ const navigationEvents = () => {
     // Click event for Create an Order button to show create order form
     if (e.target.id.includes('createAnOrder')) {
       addOrderForm();
+    }
+    // view revenue page click event
+    if (e.target.id.includes('viewRevenue')) {
+      revenuePage();
     }
   });
 

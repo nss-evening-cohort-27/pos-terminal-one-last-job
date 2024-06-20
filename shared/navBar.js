@@ -21,6 +21,9 @@ const navBar = () => {
           <li class="nav-item">
             <a class="nav-link" href="#" id="createAnOrder">Create an Order</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="viewRevenue">View Revenue</a>
+          </li>
           
           </ul>
           <form id="navbar-search-bar" class="form-inline my-2 my-lg-0">
