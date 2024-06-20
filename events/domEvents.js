@@ -1,6 +1,7 @@
 import { deleteItem, filterItemsByOrderId, getSingleItem } from '../api/itemData';
+import deleteOrderItemsRelationship from '../api/mergedData';
 // import getItemsByOrder from '../api/mergedData';
-import { deleteOrder, getOrder, getSingleOrder } from '../api/orderData';
+import { getOrder, getSingleOrder } from '../api/orderData';
 import { addItemForm, updateItemForm } from '../components/forms/addItemForm';
 import addOrderForm from '../components/forms/addOrderForm';
 import paymentForm from '../components/forms/paymentForm';
@@ -65,7 +66,7 @@ const domEvents = () => {
       if (window.confirm('Want to delete?')) {
         console.warn('CLICKED DELETE ORDER', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
-        deleteOrder(firebaseKey).then(() => {
+        deleteOrderItemsRelationship(firebaseKey).then(() => {
           getOrder().then(showOrderCards);
         });
       }
