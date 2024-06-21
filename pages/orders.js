@@ -18,7 +18,7 @@ const showOrderCards = (array) => {
       <div class="card order-card">
         <div class="card-body">
           <h3 class="card-title card-order-name">${order.order_name}</h3>
-          <p class="card-text card-order-status">Order Status: Open</p>
+          <p class="card-text card-order-status">Order Status: <span style="color: green">Open</span></p>
           <p class="card-text card-phone-number">Customer Phone Number: ${order.phone_number}</p>
           <p class="card-text card-email-address">Customer Email Address: ${order.email_address}</p>
           <p class="card-text card-order-type">Order Type: ${order.order_type}</p>
@@ -33,7 +33,7 @@ const showOrderCards = (array) => {
       <div class="card order-card">
         <div class="card-body">
           <h3 class="card-title card-order-name">${order.order_name}</h3>
-          <p class="card-text card-order-status">Order Status: Closed</p>
+          <p class="card-text card-order-status">Order Status: <span style="color: red">Closed</span></p>
           <p class="card-text card-phone-number">Customer Phone Number: ${order.phone_number}</p>
           <p class="card-text card-email-address">Customer Email Address: ${order.email_address}</p>
           <p class="card-text card-order-type">Order Type: ${order.order_type}</p>
