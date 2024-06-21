@@ -12,6 +12,7 @@ const revenuePage = () => {
     let callInSum = 0;
     let cashSum = 0;
     let creditSum = 0;
+    let debitSum = 0;
     let mobileSum = 0;
     let skeocoinSum = 0;
     const orderDates = [];
@@ -24,6 +25,7 @@ const revenuePage = () => {
       walkInSum += order.order_type === 'In Person';
       cashSum += order.payment_type === 'cash';
       creditSum += order.payment_type === 'credit';
+      debitSum += order.payment_type === 'debit';
       mobileSum += order.payment_type === 'mobile';
       skeocoinSum += order.payment_type === 'skeocoin';
 
@@ -48,6 +50,7 @@ const revenuePage = () => {
           <p id="revenue-page-payment-types"><strong>PAYMENT TYPES:</strong> </p>
           <p id="revenue-page-cash">CASH: ${cashSum}</p>
           <p id="revenue-page-credit">CREDIT: ${creditSum}</p>
+          <p id="revenue-page-debit">DEBIT: ${debitSum}</p>
           <p id="revenue-page-mobile">MOBILE: ${mobileSum}</p>
           <p id="revenue-page-skeocoin">SKEOCOIN: ${skeocoinSum}</p>
         </div>
