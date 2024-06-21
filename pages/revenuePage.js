@@ -15,7 +15,7 @@ const revenuePage = () => {
     let mobileSum = 0;
     let skeocoinSum = 0;
     const orderDates = [];
-    
+
     orders.forEach((order) => {
       orderSum += Number(order.order_total);
       tipSum += Number(order.tip_amount);
@@ -27,34 +27,34 @@ const revenuePage = () => {
       mobileSum += order.payment_type === 'mobile';
       skeocoinSum += order.payment_type === 'skeocoin';
 
-    const earliestDate = new Date(orderDates.reduce(
-      (previous, current) => (previous < current ? previous : current)
-    ));
+      const earliestDate = new Date(orderDates.reduce(
+        (previous, current) => (previous < current ? previous : current)
+      ));
 
-    const latestDate = new Date(orderDates.reduce(
-      (previous, current) => (previous > current ? previous : current)
-    ));
+      const latestDate = new Date(orderDates.reduce(
+        (previous, current) => (previous > current ? previous : current)
+      ));
 
-    const domString = `
-
-    <div id="revenue-page-container">
-      <h1 class="revenue-page-header" id="revenue-page-header">REVENUE</h1>
-      <h1 class="revenue-page-header"  id="total-revenue-header">TOTAL REVENUE: $${Number(orderSum).toFixed(2)}</h1>
-      <div id="revenue-page-data-container">
-        <p id="revenue-page-date-range-header"><strong>DATE RANGE:</strong></p>
-        <p id="revenue-page-date-range">${earliestDate.toDateString()} - ${latestDate.toDateString()}</p>
-        <p id="revenue-page-total-tips"><strong>TOTAL TIPS:</strong> $${Number(tipSum).toFixed(2)}</p>
-        <p id="revenue-page-call-ins"><strong>TOTAL CALL IN ORDERS:</strong> ${callInSum}</p>
-        <p id="revenue-page-walk-ins"><strong>TOTAL WALK IN ORDERS:</strong> ${walkInSum}</p>
-        <p id="revenue-page-payment-types"><strong>PAYMENT TYPES:</strong> </p>
-        <p id="revenue-page-cash">CASH: ${cashSum}</p>
-        <p id="revenue-page-credit">CREDIT: ${creditSum}</p>
-        <p id="revenue-page-mobile">MOBILE: ${mobileSum}</p>
-        <p id="revenue-page-skeocoin">SKEOCOIN: ${skeocoinSum}</p>
+      const domString = `
+      <div id="revenue-page-container">
+        <h1 class="revenue-page-header" id="revenue-page-header">REVENUE</h1>
+        <h1 class="revenue-page-header"  id="total-revenue-header">TOTAL REVENUE: $${Number(orderSum).toFixed(2)}</h1>
+        <div id="revenue-page-data-container">
+          <p id="revenue-page-date-range-header"><strong>DATE RANGE:</strong></p>
+          <p id="revenue-page-date-range">${earliestDate.toDateString()} - ${latestDate.toDateString()}</p>
+          <p id="revenue-page-total-tips"><strong>TOTAL TIPS:</strong> $${Number(tipSum).toFixed(2)}</p>
+          <p id="revenue-page-call-ins"><strong>TOTAL CALL IN ORDERS:</strong> ${callInSum}</p>
+          <p id="revenue-page-walk-ins"><strong>TOTAL WALK IN ORDERS:</strong> ${walkInSum}</p>
+          <p id="revenue-page-payment-types"><strong>PAYMENT TYPES:</strong> </p>
+          <p id="revenue-page-cash">CASH: ${cashSum}</p>
+          <p id="revenue-page-credit">CREDIT: ${creditSum}</p>
+          <p id="revenue-page-mobile">MOBILE: ${mobileSum}</p>
+          <p id="revenue-page-skeocoin">SKEOCOIN: ${skeocoinSum}</p>
+        </div>
       </div>
-    </div>
-  `;
-    renderToDOM('#main-container', domString);
+    `;
+      renderToDOM('#main-container', domString);
+    });
   });
 };
 
