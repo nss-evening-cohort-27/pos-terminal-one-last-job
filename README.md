@@ -21,7 +21,7 @@ VIEW APP TBA
  - View Total Revenue, Tips, Total Payment types, Date Added, And walk ins or call ins
  
 # Video walkthrough of the App
- TBA
+ https://pos-terminal-one-last-job.netlify.app/#
 
 # Relevant Links
 [Wireframes](https://www.figma.com/design/4y3EZddALuBR3ouSEM57Np/MVP?node-id=0-1)
