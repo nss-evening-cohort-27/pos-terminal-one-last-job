@@ -25,7 +25,9 @@ body {
   overflow: hidden;
 }
 
-
+#main-container {
+  margin-top: 200px;
+}
 
 #logo {
   margin-bottom: 20px;
@@ -86,7 +88,8 @@ body {
 .order-card, .item-card {
   width: 300px;
   margin: 5px;
-  border-radius: 6;
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 #orderCards, #item-card-container {
@@ -132,6 +135,14 @@ body {
   font-weight: 200;
 }
 
+.form-btn:hover {
+  color: black;
+}
+
+.btn-danger:hover{
+  color: black;
+}
+
 .total-price {
   color: white;
   font-size: 20px;
@@ -175,4 +186,29 @@ h3{
 
 #revenue-page-container {
   color: white;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000000;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 10px;
+}
+
+button:hover {
+  color: black;
+  box-shadow: inset 0 -100px 0 0 #ffffff;
+}
+
+button:active {
+  transform: scale(0.9);
 }
