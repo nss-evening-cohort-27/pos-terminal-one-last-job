@@ -73,6 +73,7 @@ const formEvents = () => {
           tip_amount: document.querySelector('#tip-amount').value,
           closed: true,
           order_total: itemSum,
+          date_closed: Date.now(),
           firebaseKey,
         };
         updateOrder(payload).then(() => {
