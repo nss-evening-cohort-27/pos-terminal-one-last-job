@@ -13,7 +13,11 @@ const navigationEvents = () => {
 
     // Click event for View Orders button to show all orders
     if (e.target.id.includes('view-orders')) {
-      getOrder().then(showOrderCards);
+      getOrder().then((orders) => {
+        showOrderCards(orders);
+      }).catch(() => {
+        emptyOrderCards();
+      });
     }
 
     // Click event for Create an Order button to show create order form
