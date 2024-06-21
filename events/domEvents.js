@@ -20,11 +20,9 @@ const domEvents = () => {
     // CLICK EVENT FOR VIEW ORDERS BUTTON ON LANDING PAGE
     if (e.target.id.includes('landing-page-view-orders-btn')) {
       getOrder().then((orders) => {
-        if (orders.length < 1) {
-          emptyOrderCards();
-        } else {
-          showOrderCards(orders);
-        }
+        showOrderCards(orders);
+      }).catch(() => {
+        emptyOrderCards();
       });
     }
 
@@ -67,7 +65,11 @@ const domEvents = () => {
         console.warn('CLICKED DELETE ORDER', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
         deleteOrderItemsRelationship(firebaseKey).then(() => {
-          getOrder().then(showOrderCards);
+          getOrder().then((orders) => {
+            showOrderCards(orders);
+          }).catch(() => {
+            emptyOrderCards();
+          });
         });
       }
     }

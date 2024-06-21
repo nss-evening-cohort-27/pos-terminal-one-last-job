@@ -2,6 +2,7 @@ import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';
 
 const emptyOrderCards = () => {
+  clearDom();
   const domString = `
     <h3 id="no-orders-header">No Orders</h3>
   `;
