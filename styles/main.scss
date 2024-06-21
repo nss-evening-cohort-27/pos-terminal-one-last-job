@@ -211,4 +211,26 @@ button:hover {
 
 button:active {
   transform: scale(0.9);
+=======
+#revenue-page-data-container {
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  // font-weight: 200;
+}
+
+#revenue-page-header {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+#total-revenue-header {
+  padding-bottom: 40px;
+}
+
+#revenue-page-date-range {
+  padding-bottom: 20px;
+}
+
+#revenue-page-payment-types {
+  padding-top: 20px;
 }
